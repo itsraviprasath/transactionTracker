@@ -1,0 +1,80 @@
+.login-register {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+}
+
+.login-register-title {
+  color: #525252;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.login-register-subtitle {
+  color: #525252;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.label {
+  display: block;
+  color: var(--gray-3, #828282);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.input {
+  display: block;
+  width: 26.25rem;
+  padding: 0.8125rem 0.625rem;
+  align-items: center;
+  gap: 0.8125rem;
+  border-radius: 0.3125rem;
+  border: 1px solid #ded2d9;
+  margin-bottom: 10px;
+}
+
+.forgot-password {
+  display: block;
+  color: #012970;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 10px auto 20px;
+}
+
+.login-register-button {
+  width: 100%;
+  padding: 13px;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8125rem;
+  border-radius: 0.375rem;
+  background: #012970;
+  border: none;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.login-register-footer p {
+  color: var(--gray-3, #828282);
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  .login-register {
+    width: 70%;
+  }
+  .input {
+    width: 100%;
+  }
+  .login-register-button {
+    width: 108%;
+  }
+}
