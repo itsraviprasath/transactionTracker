@@ -1,11 +1,8 @@
-const { User, validate } = require("../models/User");
+const User  = require("../models/User");
 const bcrypt = require("bcrypt");
 
 const registeruser = async (req, res) => {
   try {
-    const { error } = validate(req.body);
-    if (error)
-      return res.status(409).send({ message: error.details[0].message });
     const user = await User.findOne({ email: req.body.email });
     if (user)
       return res
@@ -21,4 +18,5 @@ const registeruser = async (req, res) => {
     res.status(500).send({ message: "Internal Server Error" });
   }
 };
+
 module.exports = registeruser;
