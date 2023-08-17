@@ -1,0 +1,115 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+.grid-item {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background-color: aliceblue;
+  padding: 5px 10px 5px 30px;
+}
+
+.grid-item:hover {
+  background-color: #e6e6e6;
+}
+
+.user-photo > img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 5px solid aliceblue;
+  overflow: hidden;
+  margin: 20px auto;
+  object-fit: cover;
+}
+
+.user-photo {
+  float: left;
+}
+
+.user-data {
+  padding-left: 30px;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.user-data h1 {
+  margin: 5px auto;
+}
+
+.user-data .user-email,
+.user-data .user-phone {
+  color: var(--gray-3, #828282);
+  margin: 10px auto;
+}
+
+.aadhaar,
+.dob,
+.address,
+.id {
+  display: flex;
+  align-items: center;
+}
+
+.aadhaar p,
+.dob p,
+.address p,
+.id p {
+  margin: 10px 0;
+  color: #828282;
+  font-size: 1.1rem;
+}
+
+.aadhaar span,
+.dob span,
+.address span,
+.id span {
+  color: #000;
+}
+
+.aadhaar-dob-address {
+  display: block;
+  padding: 30px;
+}
+
+.cibil {
+  display: flex;
+  align-items: center;
+}
+
+.cibil p {
+  color: #828282;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.cibil p span {
+  color: #012970;
+  font-size: 10rem;
+}
+
+.document-section {
+  margin-bottom: 30px;
+}
+
+.all-documents {
+  background-color: aliceblue;
+  border-radius: 10px;
+  padding: 20px;
+  display: block;
+}
+
+.document-image {
+  width: 97%;
+  height: 100%;
+  object-fit: cover;
+}

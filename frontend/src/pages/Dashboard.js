@@ -1,10 +1,13 @@
-import React from 'react'
-import { Navbar } from '../routes'
+import React from "react";
+import { Navbar, Card } from "../routes";
 
 const Dashboard = () => {
   return (
-    <Navbar />
-  )
-}
+    <>
+      <Navbar />
+      {/* <Card /> */}
+    </>
+  );
+};
 
-export default Dashboard
+export default Dashboard;

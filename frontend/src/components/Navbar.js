@@ -1,16 +1,38 @@
 import React from "react";
 import "../assests/css/Navbar.css";
+import { Link } from "react-router-dom";
+import { CgProfile } from "react-icons/cg";
+import { MdNotificationsNone } from "react-icons/md";
 
 const Navbar = () => {
   return (
     <>
       <header>
-        <h2 id="logo">Logo</h2>
+        <Link className="logo" to="/dashboard">
+          <h1>Logo</h1>
+        </Link>
         <nav id="nav">
-          <a href="#" className="nav-item">Home</a>
-          <a href="#" className="nav-item">Others</a>
+          <Link to="/dashboard" className="nav-item">
+            Dashboard
+          </Link>
+          <Link to="#" className="nav-item">
+            Transactions
+          </Link>
+          <Link to="#" className="nav-item">
+            Loans
+          </Link>
+          <Link to="#" className="nav-item">
+            Others
+          </Link>
         </nav>
-        <h4 id="profile">Profile</h4>
+        <div className="nav-icon">
+          <Link to="#">
+            <MdNotificationsNone className="notification-icon" />
+          </Link>
+          <Link to="/profile">
+            <CgProfile className="profile-icon" />
+          </Link>
+        </div>
       </header>
     </>
   );

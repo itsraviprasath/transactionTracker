@@ -19,7 +19,7 @@ const LoginRegister = (props) => {
           </p>
         </div>
         <div className="login-register-body">
-          <form method="" action="">
+          <form method="" action="/dashboard">
             <label className="label" htmlFor="email">
               Email
             </label>

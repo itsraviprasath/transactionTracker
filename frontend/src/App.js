@@ -1,5 +1,5 @@
 import "./App.css";
-import { Login, Register, Dashboard } from "./routes";
+import { Login, Register, Dashboard, Profile } from "./routes";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -10,6 +10,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
     </>
