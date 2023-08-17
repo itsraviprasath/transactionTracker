@@ -3,6 +3,13 @@
 body {
   background-color: #fff;
   font-family: "Nunito Sans", sans-serif;
+  width: 100%;
+  margin: 0;
+}
+
+section,
+footer {
+  padding: 0 50px;
 }
 Link,
 a {

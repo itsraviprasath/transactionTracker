@@ -1,0 +1,50 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: aliceblue;
+  position: sticky;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.logo,
+.nav-icon {
+  margin: 0 50px;
+}
+
+.logo {
+  color: #012970;
+}
+
+.nav-item {
+  padding: 0 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #012970;
+}
+
+.nav-item:hover,
+.profile-icon:hover,
+.notification-icon:hover {
+  color: #e5510b;
+}
+
+.nav-icon {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-icon,
+.notification-icon {
+  display: flex;
+  color: #012970;
+}
+
+.nav-icon .notification-icon {
+  padding-right: 20px;
+}
