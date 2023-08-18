@@ -1,13 +1,12 @@
-const User  = require("../models/User");
+const {User,validate}  = require("../models/User");
 const bcrypt = require("bcrypt");
 
 const registeruser = async (req, res) => {
   try {
-    const user = await User.findOne({ email: req.body.email });
-    if (user)
-      return res
-        .status(409)
-        .send({ message: "user with given email already exists" });
+    const user = await User.findOne({email:req.body.email})
+    if (user){
+      
+      res.status(409).send({ message: "user with given email already exists" });}
     else {
       const salt = await bcrypt.genSalt(Number(process.env.SALT));
       const hashPassword = await bcrypt.hash(req.body.password, salt);
