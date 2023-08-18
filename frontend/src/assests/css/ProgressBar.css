@@ -1,0 +1,32 @@
+.progress-bar-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0 10px;
+}
+
+.progress-bar-container p,
+.progress-bar-container span {
+  font-size: 1.07rem;
+}
+
+.progress-bar {
+  position: absolute;
+  right: 70px;
+  width: 65%;
+  height: 20px;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: #012970;
+}
+
+.progress-bar-container span {
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+}
+
+.progress-bar-container:hover {
+  background-color: #f2f2f2;
+  border-radius: 50px;
+}

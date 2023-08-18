@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Card } from "../routes";
-
+import LoanTracker from "../components/LoanTracker";
+import UpcomingPayments from "../components/UpcomingPayments";
 const Dashboard = () => {
   return (
     <>
@@ -20,12 +21,8 @@ const Dashboard = () => {
         </div>
 
         <div className="grid-container">
-          <div className="grid-item">
-            <h3>Loan Tracker</h3>
-          </div>
-          <div className="grid-item">
-            <h3>Upcoming Payments</h3>
-          </div>
+          <LoanTracker />
+          <UpcomingPayments />
         </div>
       </main>
     </>

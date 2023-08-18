@@ -13,6 +13,8 @@ const LoginRegister = (props) => {
   const url = login ? "api/auth" : "api/users";
   const navigate = useNavigate();
 
+  const [errorMsg, setErrorMsg] = useState("");
+
   const handleRegisterSubmit = (e) => {
     e.preventDefault();
     axios
@@ -40,8 +42,10 @@ const LoginRegister = (props) => {
       })
       .then((result) => {
         console.log(result.data);
-        if (result.data.login != "false") {
+        if (result.data.login !== "false") {
           navigate("/dashboard");
+        } else {
+          setErrorMsg(result.data.message);
         }
       })
       .catch((err) => {
@@ -126,9 +130,12 @@ const LoginRegister = (props) => {
             />
 
             {login ? (
-              <Link className="forgot-password" to="#">
-                Forgot Password?
-              </Link>
+              <>
+                <p className="error-msg">{errorMsg}</p>
+                <Link className="forgot-password" to="#">
+                  Forgot Password?
+                </Link>
+              </>
             ) : null}
 
             <button className="login-register-button" type="submit">
