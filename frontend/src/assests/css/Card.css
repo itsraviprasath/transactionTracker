@@ -1,8 +1,14 @@
-.card {
-  width: 15%;
-  margin: 30px auto;
-  padding: 15px;
-  border-radius: 10px;
-  background-color: aliceblue;
+.card p {
+  font-size: 1.125rem;
+  color: #828282;
+}
+
+.card p span {
+  font-size: 1.2rem;
+  font-weight: 600;
   color: #012970;
+}
+
+.dashboard .grid-container {
+  margin: 20px auto;
 }
