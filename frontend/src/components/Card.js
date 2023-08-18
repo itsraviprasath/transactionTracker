@@ -1,12 +1,15 @@
 import React from "react";
 import "../assests/css/Card.css";
 
-const Card = () => {
+const Card = (props) => {
   return (
     <>
       <div className="card">
-        <h3>Total Loan Amount</h3>
-        <p>$100000</p>
+        <div className="grid-item hover">
+          <p>
+            {props?.title}: <span> ₹ {props?.value}</span>
+          </p>
+        </div>
       </div>
     </>
   );

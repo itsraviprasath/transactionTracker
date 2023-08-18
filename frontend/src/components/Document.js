@@ -1,5 +1,5 @@
 import React from "react";
-import "../assests/css/Documents.css";
+import "../assests/css/Document.css";
 import { BiEdit } from "react-icons/bi";
 import { AiOutlineDelete, AiOutlineFileAdd } from "react-icons/ai";
 import { FiEye } from "react-icons/fi";

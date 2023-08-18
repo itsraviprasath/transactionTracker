@@ -1,13 +1,58 @@
 import React, { useState } from "react";
 import "../assests/css/LoginRegister.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const LoginRegister = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const login = props?.isLogin;
+  const url = login ? "api/auth" : "api/users";
+  const navigate = useNavigate();
+
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const handleRegisterSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post(`http://localhost:2000/${url}`, {
+        name: name,
+        email: email,
+        password: password,
+        phoneNumber: phoneNumber,
+      })
+      .then((result) => {
+        console.log(result.data);
+        navigate("/dashboard");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post(`http://localhost:2000/${url}`, {
+        email: email,
+        password: password,
+      })
+      .then((result) => {
+        console.log(result.data);
+        if (result.data.login !== "false") {
+          navigate("/dashboard");
+        } else {
+          setErrorMsg(result.data.message);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <>
       <section className="login-register">
@@ -19,7 +64,11 @@ const LoginRegister = (props) => {
           </p>
         </div>
         <div className="login-register-body">
-          <form method="" action="/dashboard">
+          <form
+            method=""
+            action=""
+            onSubmit={login ? handleLoginSubmit : handleRegisterSubmit}
+          >
             <label className="label" htmlFor="email">
               Email
             </label>
@@ -56,12 +105,12 @@ const LoginRegister = (props) => {
                 <input
                   type="tel"
                   className="input"
-                  name="phone"
+                  name="phoneNumber"
                   id="phone"
-                  value={phone}
+                  value={phoneNumber}
                   required
                   placeholder="9876543210"
-                  onChange={(e) => setPhone(e.target.value)}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
                 />
               </>
             )}
@@ -81,9 +130,12 @@ const LoginRegister = (props) => {
             />
 
             {login ? (
-              <Link className="forgot-password" to="#">
-                Forgot Password?
-              </Link>
+              <>
+                <p className="error-msg">{errorMsg}</p>
+                <Link className="forgot-password" to="#">
+                  Forgot Password?
+                </Link>
+              </>
             ) : null}
 
             <button className="login-register-button" type="submit">

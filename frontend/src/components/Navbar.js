@@ -5,6 +5,8 @@ import { CgProfile } from "react-icons/cg";
 import { MdNotificationsNone } from "react-icons/md";
 
 const Navbar = () => {
+  // document.getElementsByClassName("nav-item")[0].classList.add("active");
+
   return (
     <>
       <header>
