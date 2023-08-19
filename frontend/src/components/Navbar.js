@@ -1,5 +1,5 @@
 import React from "react";
-import "../assests/css/Navbar.css";
+import "../assests/css/Navbar.scss";
 import { Link } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 import { MdNotificationsNone } from "react-icons/md";

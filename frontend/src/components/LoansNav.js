@@ -1,5 +1,5 @@
 import React from "react";
-import "../assests/css/LoansNav.css";
+import "../assests/css/LoansNav.scss";
 
 const LoansNav = () => {
   return (

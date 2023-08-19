@@ -1,4 +1,4 @@
-import "../assests/css/ProgressBar.css";
+import "../assests/css/ProgressBar.scss";
 
 const ProgressBar = (props) => {
   return (

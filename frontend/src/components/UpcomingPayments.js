@@ -1,5 +1,5 @@
 import React from "react";
-import "../assests/css/UpcomingPayments.css";
+import "../assests/css/UpcomingPayments.scss";
 
 const UpcomingPayments = () => {
   return (
