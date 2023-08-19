@@ -3,6 +3,10 @@ import "../assests/css/UserDetails.scss";
 import Document from "./Document";
 
 const UserDetails = () => {
+  
+    const datas = JSON.parse(localStorage.getItem('Data'))
+    console.log(datas)
+
   return (
     <>
       <section className="profile">
@@ -17,9 +21,9 @@ const UserDetails = () => {
                 />
               </div>
               <div className="user-data">
-                <h1>Raviprasath</h1>
-                <p className="user-email">raviprasath.in@gmail.com</p>
-                <p className="user-phone">9994895712</p>
+                <h1>{datas.name}</h1>
+                <p className="user-email">{datas.email}</p>
+                <p className="user-phone">{datas.phoneNumber}</p>
               </div>
             </div>
             <div class="grid-item hover aadhaar-dob-address">
@@ -30,17 +34,17 @@ const UserDetails = () => {
               </div>
               <div className="aadhaar">
                 <p>
-                  Aadhaar: <span> 331585207411</span>
+                  Aadhaar: <span>{datas.aadhar}</span>
                 </p>
               </div>
               <div className="dob">
                 <p>
-                  Date of Birth: <span>31/08/2003</span>
+                  Date of Birth: <span>{datas.dob}</span>
                 </p>
               </div>
               <div className="address">
                 <p>
-                  Address: <span> Erode, Tamilnadu, India</span>
+                  Address: <span>{datas.address}</span>
                 </p>
               </div>
             </div>
@@ -74,6 +78,7 @@ const UserDetails = () => {
           </div>
         </div>
       </section>
+      
     </>
   );
 };

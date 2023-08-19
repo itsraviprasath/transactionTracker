@@ -9,6 +9,9 @@ const LoginRegister = (props) => {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [dob,setDob] = useState("");
+  const [aadhar,setAadhar] = useState("");
+  const [address,setAddress] = useState("");
   const login = props?.isLogin;
   const url = login ? "api/auth" : "api/users";
   const navigate = useNavigate();
@@ -23,10 +26,14 @@ const LoginRegister = (props) => {
         email: email,
         password: password,
         phoneNumber: phoneNumber,
+        dob: dob, 
+        aadhar: aadhar, 
+        address: address
       })
       .then((result) => {
-        console.log(result.data);
-        navigate("/dashboard");
+        const res = JSON.stringify(result.data)
+        localStorage.setItem("Data",res)
+        navigate("/profile");
       })
       .catch((err) => {
         console.log(err);
@@ -41,9 +48,11 @@ const LoginRegister = (props) => {
         password: password,
       })
       .then((result) => {
-        console.log(result.data);
+        const res = JSON.stringify(result.data)
+        localStorage.setItem("Data",res)
+        
         if (result.data.login !== "false") {
-          navigate("/dashboard");
+          navigate("/profile");
         } else {
           setErrorMsg(result.data.message);
         }
@@ -51,6 +60,8 @@ const LoginRegister = (props) => {
       .catch((err) => {
         console.log(err);
       });
+
+      
   };
 
   return (
@@ -111,6 +122,45 @@ const LoginRegister = (props) => {
                   required
                   placeholder="9876543210"
                   onChange={(e) => setPhoneNumber(e.target.value)}
+                />
+                <label className="label" htmlFor="name">
+                  DOB
+                </label>
+                <input
+                  type="date"
+                  className="input"
+                  name="dob"
+                  id="dob"
+                  value={dob}
+                  required
+                  placeholder="Andrew"
+                  onChange={(e) => setDob(e.target.value)}
+                />
+                <label className="label" htmlFor="name">
+                  Aadhar Number
+                </label>
+                <input
+                  type="text"
+                  className="input"
+                  name="aadhar"
+                  id="aadhar"
+                  value={aadhar}
+                  required
+                  placeholder="Andrew"
+                  onChange={(e) => setAadhar(e.target.value)}
+                />
+                <label className="label" htmlFor="name">
+                  Address
+                </label>
+                <input
+                  type="text"
+                  className="input"
+                  name="address"
+                  id="address"
+                  value={address}
+                  required
+                  placeholder="Andrew"
+                  onChange={(e) => setAddress(e.target.value)}
                 />
               </>
             )}
