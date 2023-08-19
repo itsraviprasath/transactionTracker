@@ -1,0 +1,66 @@
+.loan-card {
+  width: 30%;
+  margin: 10px;
+  display: inline-block;
+  position: relative;
+  border-radius: 7px;
+  padding: 15px;
+  background-color: aliceblue;
+}
+
+.loan-card .first-div,
+.loan-card .second-div {
+  display: inline-block;
+}
+
+.loan-card .second-div {
+  position: absolute;
+  right: 70px;
+}
+
+.loan-type {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 10px;
+  padding: 0 10px;
+  border-radius: 10px;
+  background-color: #012970;
+  color: #fff;
+}
+
+.loan-name {
+  display: flex;
+  align-items: center;
+}
+
+.arrow-icon {
+  position: absolute;
+  right: 30px;
+  cursor: pointer;
+}
+
+.popup-content {
+  border-radius: 10px;
+}
+
+.popup {
+  padding: 20px;
+  position: relative;
+}
+
+.popup h1 {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+}
+
+.popup .cancel-btn {
+  border-radius: 5px;
+  background-color: rgb(204, 228, 248);
+  font-size: 1rem;
+  border: none;
+  padding: 10px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}

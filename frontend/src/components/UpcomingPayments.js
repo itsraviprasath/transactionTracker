@@ -1,4 +1,5 @@
 import React from "react";
+import "../assests/css/UpcomingPayments.css";
 
 const UpcomingPayments = () => {
   return (

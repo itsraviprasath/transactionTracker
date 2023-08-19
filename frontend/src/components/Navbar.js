@@ -10,8 +10,8 @@ const Navbar = () => {
   return (
     <>
       <header>
-        <Link className="logo" to="/dashboard">
-          <h1>Logo</h1>
+        <Link className="logo" to="#">
+          <h1>TranX</h1>
         </Link>
         <nav id="nav">
           <Link to="/dashboard" className="nav-item">
@@ -20,11 +20,11 @@ const Navbar = () => {
           <Link to="#" className="nav-item">
             Transactions
           </Link>
-          <Link to="#" className="nav-item">
-            Loans
+          <Link to="/all-loans" className="nav-item">
+            All Loans
           </Link>
-          <Link to="#" className="nav-item">
-            Others
+          <Link to="/your-loans" className="nav-item">
+            Your Loans
           </Link>
         </nav>
         <div className="nav-icon">
