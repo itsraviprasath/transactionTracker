@@ -3,11 +3,13 @@ import { Navbar, Card } from "../routes";
 import LoanTracker from "../components/LoanTracker";
 import UpcomingPayments from "../components/UpcomingPayments";
 const Dashboard = () => {
+  const datas = JSON.parse(localStorage.getItem('Data'))
+    console.log(datas)
   return (
     <>
       <Navbar />
       <main className="dashboard">
-        <h2>Hi Raviprasath, Welcome back!</h2>
+        <h2>Hi <span>{datas.name}</span>, Welcome back!</h2>
         <div className="grid-container">
           <Card title="Bending Amount" value="7000" />
           <Card title="Paid Amount" value="3000" />
