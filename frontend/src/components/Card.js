@@ -1,5 +1,5 @@
 import React from "react";
-import "../assests/css/Card.css";
+import "../assests/css/Card.scss";
 
 const Card = (props) => {
   return (
@@ -9,7 +9,6 @@ const Card = (props) => {
           <p>
             {props?.title}:{" "}
             <span>
-              {" "}
               {props?.isAmount ? "₹" : null} {props?.value}
             </span>
           </p>

@@ -1,5 +1,5 @@
 import React from "react";
-import "../assests/css/LoanCard.css";
+import "../assests/css/LoanCard.scss";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";

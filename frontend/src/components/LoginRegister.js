@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../assests/css/LoginRegister.css";
+import "../assests/css/LoginRegister.scss";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";

@@ -1,5 +1,5 @@
 import React from "react";
-import "../assests/css/LoanTracker.css";
+import "../assests/css/LoanTracker.scss";
 import ProgressBar from "../components/ProgressBar";
 
 const LoanTracker = () => {

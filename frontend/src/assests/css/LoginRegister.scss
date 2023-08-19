@@ -1,0 +1,50 @@
+.login-register {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+
+  .login-register-title {
+    color: #525252;
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+
+  .login-register-subtitle {
+    color: #525252;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 0;
+  }
+
+  .error-msg {
+    color: red;
+    font-weight: 500;
+  }
+
+  .forgot-password,
+  .login-register-footer p {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  .forgot-password {
+    display: block;
+    color: #012970;
+    margin: 10px auto 20px;
+  }
+
+  .login-register-footer p {
+    color: var(--gray-3, #828282);
+  }
+
+}
+
+
+@media screen and (max-width: 768px) {
+  .login-register {
+    width: 100%;
+  }
+}
