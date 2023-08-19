@@ -7,7 +7,11 @@ const Card = (props) => {
       <div className="card">
         <div className="grid-item hover">
           <p>
-            {props?.title}: <span> ₹ {props?.value}</span>
+            {props?.title}:{" "}
+            <span>
+              {" "}
+              {props?.isAmount ? "₹" : null} {props?.value}
+            </span>
           </p>
         </div>
       </div>

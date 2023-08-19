@@ -1,0 +1,24 @@
+.loans-nav {
+  width: 80%;
+  margin: 50px auto;
+  border: 1px solid #828282;
+  padding: 2px 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.active-loans,
+.pending-loans {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #012970;
+  font-weight: 600;
+  text-align: center;
+}
+
+.active-loans {
+  background-color: #e6e6e6;
+}

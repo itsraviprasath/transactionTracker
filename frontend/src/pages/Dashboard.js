@@ -9,15 +9,15 @@ const Dashboard = () => {
       <main className="dashboard">
         <h2>Hi Raviprasath, Welcome back!</h2>
         <div className="grid-container">
-          <Card title="Bending Amount" value="7000" />
-          <Card title="Paid Amount" value="3000" />
-          <Card title="Total Amount" value="10000" />
+          <Card title="Bending Amount" value="7000" isAmount={true} />
+          <Card title="Paid Amount" value="3000" isAmount={true} />
+          <Card title="Total Amount" value="10000" isAmount={true} />
         </div>
 
         <div className="grid-container">
-          <Card title="Active Loans" value="1" />
-          <Card title="Closed Loans" value="0" />
-          <Card title="All Loans" value="1" />
+          <Card title="Active Loans" value="1" isAmount={false} />
+          <Card title="Closed Loans" value="0" isAmount={false} />
+          <Card title="All Loans" value="1" isAmount={false} />
         </div>
 
         <div className="grid-container">

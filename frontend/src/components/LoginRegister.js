@@ -138,7 +138,7 @@ const LoginRegister = (props) => {
               </>
             ) : null}
 
-            <button className="login-register-button" type="submit">
+            <button className="button" type="submit">
               {props?.button}
             </button>
           </form>

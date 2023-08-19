@@ -52,20 +52,6 @@
   margin: 10px auto 20px;
 }
 
-.login-register-button {
-  width: 100%;
-  padding: 13px;
-  justify-content: center;
-  align-items: center;
-  gap: 0.8125rem;
-  border-radius: 0.375rem;
-  background: #012970;
-  border: none;
-  color: #fff;
-  font-size: 1.125rem;
-  font-weight: 600;
-}
-
 .login-register-footer p {
   color: var(--gray-3, #828282);
   font-size: 1.125rem;
