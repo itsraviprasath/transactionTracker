@@ -10,11 +10,13 @@ import {
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
+  const data = localStorage.getItem("Data")
+  console.log(data)
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/"  element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/all-loans" element={<AllLoans />} />
