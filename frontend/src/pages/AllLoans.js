@@ -42,6 +42,7 @@ const AllLoans = () => {
         <h2 className="page-heading">
           Available Loans{" "}
           <Popup
+            className="create-popup"
             trigger={
               <Link className="create-btn" to="#">
                 Create
@@ -132,13 +133,13 @@ const AllLoans = () => {
                     >
                       Create
                     </button>
-                    {/* <button
+                    <button
                       style={{ backgroundColor: "aliceblue", color: "#012970" }}
                       className="button"
                       onClick={() => close()}
                     >
                       Cancel
-                    </button> */}
+                    </button>
                   </from>
                 </div>
               </div>
