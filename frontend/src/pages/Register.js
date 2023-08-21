@@ -10,7 +10,7 @@ const Register = () => {
         question="Already have an account?"
         redirect="Login to your account"
         isLogin={false}
-        redirectLink="/"
+        redirectLink="/login"
       />
     </>
   );

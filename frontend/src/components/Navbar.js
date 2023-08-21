@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "../assests/css/Navbar.scss";
 import { Link } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 import { MdNotificationsNone } from "react-icons/md";
+import { HiMenu } from "react-icons/hi";
 
 const Navbar = () => {
+  const [showNavbar, setShowNavbar] = useState(false);
+
+  const handleShowNavbar = () => {
+    setShowNavbar(!showNavbar);
+  };
+
   // document.getElementsByClassName("nav-item")[0].classList.add("active");
 
   return (
@@ -13,28 +20,33 @@ const Navbar = () => {
         <Link className="logo" to="#">
           <h1>TranX</h1>
         </Link>
+        <div className="menu-icon" onClick={handleShowNavbar}>
+          <HiMenu />
+        </div>
         <nav id="nav">
-          <Link to="/dashboard" className="nav-item">
-            Dashboard
-          </Link>
-          <Link to="#" className="nav-item">
-            Transactions
-          </Link>
-          <Link to="/all-loans" className="nav-item">
-            All Loans
-          </Link>
-          <Link to="/your-loans" className="nav-item">
-            Your Loans
-          </Link>
+          <div className={"nav-elements  {showNavbar}}>
+            <Link to="/dashboard" className="nav-item">
+              Dashboard
+            </Link>
+            <Link to="#" className="nav-item">
+              Transactions
+            </Link>
+            <Link to="/all-loans" className="nav-item">
+              All Loans
+            </Link>
+            <Link to="/your-loans" className="nav-item">
+              Your Loans
+            </Link>
+          </div>
         </nav>
-        <div className="nav-icon">
+        {/* <div className="nav-icon">
           <Link to="#">
             <MdNotificationsNone className="notification-icon" />
           </Link>
           <Link to="/profile">
             <CgProfile className="profile-icon" />
           </Link>
-        </div>
+        </div> */}
       </header>
     </>
   );
