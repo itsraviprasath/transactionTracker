@@ -1,4 +1,4 @@
-.user-photo > img {
+.user-photo>img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -88,4 +88,42 @@
   width: 97%;
   height: 100%;
   object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .user-photo>img {
+    height: 90px;
+    width: 90px;
+  }
+
+  .user-data {
+    font-size: 1rem;
+    padding-left: 10px;
+  }
+
+  .aadhaar-dob-address {
+    padding: 20px !important;
+  }
+
+  .cibil {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .cibil p span {
+    font-size: 8rem;
+  }
+
+  .all-documents {
+    padding: 10px 0px;
+  }
+
+  .document-preview {
+    margin-bottom: 50px;
+  }
+
+  .profile .grid-item {
+    padding: 5px;
+  }
+
 }
