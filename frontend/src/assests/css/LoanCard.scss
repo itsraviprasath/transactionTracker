@@ -64,3 +64,13 @@
   right: 20px;
   bottom: 20px;
 }
+
+@media screen and (max-width: 768px) {
+  .loan-card {
+    width: 95%;
+  }
+
+  .loan-card .second-div {
+    right: 20px;
+  }
+}

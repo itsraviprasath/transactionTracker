@@ -64,15 +64,16 @@ header {
 
 @media screen and (max-width: 768px) {
   .menu-icon {
-    display: block;
+    display: flex;
     cursor: pointer;
+    font-size: 2rem;
   }
 
   .nav-elements {
     position: absolute;
     right: 0;
-    top: 60px;
-    background-color: #fef7e5;
+    top: 86px;
+    background-color: #fff;
     width: 0px;
     height: calc(100vh - 60px);
     transition: all 0.3s ease-in;
@@ -80,7 +81,13 @@ header {
   }
 
   .nav-elements.active {
-    width: 270px;
+    width: 100%;
+    text-align: center;
   }
 
+  .nav-elements .nav-item {
+    display: flex;
+    margin-top: 30px;
+    text-align: center;
+  }
 }

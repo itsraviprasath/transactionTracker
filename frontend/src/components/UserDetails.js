@@ -3,9 +3,8 @@ import "../assests/css/UserDetails.scss";
 import Document from "./Document";
 
 const UserDetails = () => {
-  
-    const datas = JSON.parse(localStorage.getItem('Data'))
-    console.log(datas)
+  const datas = JSON.parse(localStorage.getItem("Data"));
+  console.log(datas);
 
   return (
     <>
@@ -68,7 +67,7 @@ const UserDetails = () => {
               <Document document="Land Documents" isUploaded={false} />
               <Document document="Other Documents" isUploaded={true} />
             </div>
-            <div className="grid-item hover">
+            <div className="grid-item hover document-preview">
               <img
                 className="document-image"
                 src="https://aadhar-uidai.in/wp-content/uploads/2018/07/main-qimg-4a3032007d087580af4a6eff50634659.png"
@@ -78,7 +77,6 @@ const UserDetails = () => {
           </div>
         </div>
       </section>
-      
     </>
   );
 };

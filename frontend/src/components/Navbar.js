@@ -24,7 +24,7 @@ const Navbar = () => {
           <HiMenu />
         </div>
         <nav id="nav">
-          <div className={"nav-elements  {showNavbar}}>
+          <div className={`nav-elements  ${showNavbar && "active"}`}>
             <Link to="/dashboard" className="nav-item">
               Dashboard
             </Link>
@@ -39,14 +39,14 @@ const Navbar = () => {
             </Link>
           </div>
         </nav>
-        {/* <div className="nav-icon">
+        <div className="nav-icon">
           <Link to="#">
             <MdNotificationsNone className="notification-icon" />
           </Link>
           <Link to="/profile">
             <CgProfile className="profile-icon" />
           </Link>
-        </div> */}
+        </div>
       </header>
     </>
   );

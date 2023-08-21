@@ -1,45 +1,45 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import LoanCard from "../components/LoanCard";
 import { Link } from "react-router-dom";
-import axios from "axios"
+import axios from "axios";
 
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 
 const AllLoans = () => {
-  const [loanAmount,setLoanAmount] = useState("")
-  const [loanType,setLoanType] = useState("")
-  const [tenure,setTenure] = useState("")
-  const [interestRete,setInterestRate] = useState("")
-  const [emi,setEmi] = useState("")
+  const [loanAmount, setLoanAmount] = useState("");
+  const [loanType, setLoanType] = useState("");
+  const [tenure, setTenure] = useState("");
+  const [interestRete, setInterestRate] = useState("");
+  const [emi, setEmi] = useState("");
 
-
-  const LS = JSON.parse(localStorage.getItem("Data"))
-  const id = LS._id
+  const LS = JSON.parse(localStorage.getItem("Data"));
+  const id = LS._id;
   // console.log(id)
   const handleAddLoan = (e) => {
-    console.log("Hello")
+    console.log("Hello");
     // e.preventDefault();
-    axios.post(`http://localhost:2000/api/loans/${id}`,{
-      amount:loanAmount,
-      tenure : tenure ,
-      rateOfInterest  : interestRete,
-      emi   : emi,
-      user : id
-    })
-    .then(res => {
-      console.log(res)
-    })
-    .catch(err => console.log(err))
-  }
+    axios
+      .post(`http://localhost:2000/api/loans/${id}`, {
+        amount: loanAmount,
+        tenure: tenure,
+        rateOfInterest: interestRete,
+        emi: emi,
+        user: id,
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <>
       <Navbar />
 
-      <main>
-        <h2>
+      <main className="all-loans">
+        <h2 className="page-heading">
           Available Loans{" "}
           <Popup
             trigger={
@@ -54,7 +54,7 @@ const AllLoans = () => {
               <div className="popup">
                 <h2 style={{ marginTop: 0 }}>Create your loan offer</h2>
                 <div>
-                  <from method="" action="" onSubmit={()=>close()}>
+                  <from method="" action="" onSubmit={() => close()}>
                     <label className="label" htmlFor="loanAmount">
                       Loan Amount
                     </label>
@@ -80,7 +80,7 @@ const AllLoans = () => {
                       value={loanType}
                       // required
                       placeholder="Enter Loan Type"
-                      onChange={e => setLoanType(e.target.value)}
+                      onChange={(e) => setLoanType(e.target.value)}
                     />
 
                     <label className="label" htmlFor="tenure">
@@ -94,7 +94,7 @@ const AllLoans = () => {
                       value={tenure}
                       // required
                       placeholder="Enter Loan Tenure"
-                      onChange = {e => setTenure(e.target.value)}
+                      onChange={(e) => setTenure(e.target.value)}
                     />
 
                     <label className="label" htmlFor="interestRate">
@@ -108,7 +108,7 @@ const AllLoans = () => {
                       value={interestRete}
                       // required
                       placeholder="Enter Interest Rate"
-                      onChange={e => setInterestRate(e.target.value)}
+                      onChange={(e) => setInterestRate(e.target.value)}
                     />
 
                     <label className="label" htmlFor="emi">
@@ -122,10 +122,14 @@ const AllLoans = () => {
                       value={emi}
                       // required
                       placeholder="Enter EMI"
-                      onChange={e => setEmi(e.target.value)}
+                      onChange={(e) => setEmi(e.target.value)}
                     />
 
-                    <button className="button" type="submit" onClick={()=>handleAddLoan()}>
+                    <button
+                      className="button"
+                      type="submit"
+                      onClick={() => handleAddLoan()}
+                    >
                       Create
                     </button>
                     {/* <button
