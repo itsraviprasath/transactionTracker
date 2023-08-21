@@ -44,9 +44,14 @@ header {
 }
 
 .profile-icon,
-.notification-icon {
+.notification-icon,
+.logout-icon {
   display: flex;
   color: #012970;
+}
+
+.logout-icon {
+  margin-left: 20px;
 }
 
 .nav-icon .notification-icon {

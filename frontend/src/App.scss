@@ -107,6 +107,10 @@ a {
   font-weight: 600;
 }
 
+.create-popup-content {
+  width: 31% !important;
+}
+
 @media screen and (max-width: 768px) {
   .button {
     width: 100%;
@@ -136,5 +140,8 @@ a {
     margin-left: 25px;
   }
 
+  .create-popup-content {
+    width: 90% !important;
+  }
 
 }
