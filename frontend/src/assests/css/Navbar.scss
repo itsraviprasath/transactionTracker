@@ -10,6 +10,10 @@ header {
   left: 0;
 }
 
+.nav {
+  position: relative;
+}
+
 .logo,
 .nav-icon {
   margin: 0 50px;
@@ -51,4 +55,32 @@ header {
 
 .active {
   color: #e5510b;
+}
+
+.menu-icon {
+  display: none;
+}
+
+
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  .nav-elements {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    background-color: #fef7e5;
+    width: 0px;
+    height: calc(100vh - 60px);
+    transition: all 0.3s ease-in;
+    overflow: hidden;
+  }
+
+  .nav-elements.active {
+    width: 270px;
+  }
+
 }

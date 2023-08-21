@@ -9,9 +9,9 @@ const LoginRegister = (props) => {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [dob,setDob] = useState("");
-  const [aadhar,setAadhar] = useState("");
-  const [address,setAddress] = useState("");
+  const [dob, setDob] = useState("");
+  const [aadhar, setAadhar] = useState("");
+  const [address, setAddress] = useState("");
   const login = props?.isLogin;
   const url = login ? "api/auth" : "api/users";
   const navigate = useNavigate();
@@ -26,14 +26,15 @@ const LoginRegister = (props) => {
         email: email,
         password: password,
         phoneNumber: phoneNumber,
-        dob: dob, 
-        aadhar: aadhar, 
-        address: address
+        dob: dob,
+        aadhar: aadhar,
+        address: address,
       })
       .then((result) => {
-        const res = JSON.stringify(result.data)
-        localStorage.setItem("Data",res)
-        navigate("/profile");
+        const res = JSON.stringify(result.data);
+        localStorage.setItem("Data", res);
+        navigate("/dashboard");
+        document.location.reload();
       })
       .catch((err) => {
         console.log(err);
@@ -48,11 +49,12 @@ const LoginRegister = (props) => {
         password: password,
       })
       .then((result) => {
-        const res = JSON.stringify(result.data)
-        localStorage.setItem("Data",res)
-        
+        const res = JSON.stringify(result.data);
+        localStorage.setItem("Data", res);
+
         if (result.data.login !== "false") {
-          navigate("/profile");
+          navigate("/dashboard");
+          document.location.reload();
         } else {
           setErrorMsg(result.data.message);
         }
@@ -60,8 +62,6 @@ const LoginRegister = (props) => {
       .catch((err) => {
         console.log(err);
       });
-
-      
   };
 
   return (
@@ -146,7 +146,7 @@ const LoginRegister = (props) => {
                   id="aadhar"
                   value={aadhar}
                   required
-                  placeholder="Andrew"
+                  placeholder="123012341234"
                   onChange={(e) => setAadhar(e.target.value)}
                 />
                 <label className="label" htmlFor="name">
@@ -159,7 +159,7 @@ const LoginRegister = (props) => {
                   id="address"
                   value={address}
                   required
-                  placeholder="Andrew"
+                  placeholder="South Street, Ooty, Tamilnadu"
                   onChange={(e) => setAddress(e.target.value)}
                 />
               </>
