@@ -8,9 +8,10 @@ const userSchema = new mongoose.Schema({
   email: { type: String, required: true },
   phoneNumber: { type: String, required: true },
   password: { type: String, required: true },
-  dob:{ type: Date,required:true},
-  aadhar:{type:String,required:true},
-  address:{type:String,required:true}
+  dob: { type: Date, required: true },
+  aadhar: { type: String, required: true },
+  address: { type: String, required: true },
+  uploadedDocument: { type: String, required: true },
 });
 
 userSchema.methods.generateAuthToken = function () {
