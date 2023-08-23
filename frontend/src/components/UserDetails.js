@@ -11,7 +11,7 @@ const UserDetails = () => {
       <section className="profile">
         <div>
           <h1>User Profile</h1>
-          <div class="grid-container">
+          <div className="grid-container">
             <div className="grid-item hover">
               <div className="user-photo">
                 <img
@@ -25,7 +25,7 @@ const UserDetails = () => {
                 <p className="user-phone">{datas.phoneNumber}</p>
               </div>
             </div>
-            <div class="grid-item hover aadhaar-dob-address">
+            <div className="grid-item hover aadhaar-dob-address">
               <div className="id">
                 <p>
                   Customer Id:<span> 5413</span>{" "}
@@ -47,7 +47,7 @@ const UserDetails = () => {
                 </p>
               </div>
             </div>
-            <div class="grid-item hover cibil">
+            <div className="grid-item hover cibil">
               <p>
                 Cibil Score: <span>750</span>
               </p>

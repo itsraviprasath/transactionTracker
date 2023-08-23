@@ -100,6 +100,7 @@ const LoginRegister = (props) => {
                   Name
                 </label>
                 <input
+                  style={{ textTransform: "capitalize" }}
                   type="text"
                   className="input"
                   name="name"

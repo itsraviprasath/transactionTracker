@@ -32,6 +32,11 @@ const AllLoans = () => {
         console.log(res);
       })
       .catch((err) => console.log(err));
+    setLoanAmount("");
+    setLoanType("");
+    setTenure("");
+    setInterestRate("");
+    setEmi("");
   };
 
   return (

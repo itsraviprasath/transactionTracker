@@ -3,4 +3,4 @@ const registeruser = require("../controllers/UserController");
 
 router.post("/", registeruser);
 
-module.exports = router
+module.exports = router;
