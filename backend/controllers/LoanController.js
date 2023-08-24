@@ -4,7 +4,7 @@ const allLoan = async (req, res) => {
   try {
     const users = await Loans.find()
       // .populate("user")
-      .then((res) => console.log(res))
+      .then((result) => res.send(result))
       .catch((err) => console.log(err));
   } catch (err) {
     console.log(err);

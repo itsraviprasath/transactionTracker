@@ -3,12 +3,13 @@ import "../assests/css/LoanCard.scss";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
+import Paybutton from "./Paybutton";
 
-const LoanCard = () => {
+const LoanCard = (props) => {
   return (
     <div className="loan-card">
       <h1 className="loan-name">
-        ₹ 10000 <span className="loan-type">Premium</span>
+        ₹ {props.amount} <span className="loan-type">Premium</span>
         <Popup
           trigger={<BsFillArrowRightCircleFill className="arrow-icon" />}
           modal
@@ -18,15 +19,15 @@ const LoanCard = () => {
             <div className="popup">
               <div>
                 <h1>
-                  ₹ 10000 <span className="loan-type">Premium</span>
+                  ₹ {props.amount} <span className="loan-type">Premium</span>
                 </h1>
                 <div>
-                  <p>Tenure: 20 Months</p>
-                  <p>Interest: 10 %</p>
-                  <p>EMI / month: ₹ 1000</p>
+                  <p>Tenure: {props.tenure}</p>
+                  <p>Interest: {props.rateOfInterest} %</p>
+                  <p>EMI / month: ₹ {props.emi}</p>
                   <p>Dummy: demo</p>
                   <p>Dummy: demo</p>
-                  <p>Dummy: demo</p>
+                  {/* <Paybutton   /> */}
                 </div>
                 <button className="cancel-btn" onClick={() => close()}>
                   Close
@@ -37,14 +38,14 @@ const LoanCard = () => {
         </Popup>
       </h1>
       <div className="first-div">
-        <p>Tenure: 20 Months</p>
-        <p>Interest: 10 %</p>
-        <p>EMI / month: ₹ 1000</p>
+        <p>Tenure:{props.tenure}</p>
+        <p>Rate of Interest:{props.rateOfInterest}</p>
+        <p>EMI :{props.emi}</p>
       </div>
       <div className="second-div">
+        {/* <p>Dummy: demo</p>
         <p>Dummy: demo</p>
-        <p>Dummy: demo</p>
-        <p>Dummy: demo</p>
+        <p>Dummy: demo</p> */}
       </div>
     </div>
   );
