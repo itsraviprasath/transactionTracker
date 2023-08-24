@@ -10,8 +10,6 @@ import {
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const data = localStorage.getItem("Data");
-  console.log(data);
   return (
     <>
       <BrowserRouter>

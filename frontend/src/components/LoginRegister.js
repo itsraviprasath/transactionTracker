@@ -3,6 +3,7 @@ import "../assests/css/LoginRegister.scss";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import logo from "../assests/images/logo.png";
 
 const LoginRegister = (props) => {
   const [email, setEmail] = useState("");
@@ -68,7 +69,7 @@ const LoginRegister = (props) => {
     <>
       <section className="login-register">
         <div className="login-register-header">
-          <img src="" alt="logo" />
+          <img className="logo" src={logo} alt="logo" />
           <h1 className="login-register-title">{props?.title}</h1>
           <p className="login-register-subtitle">
             Lorem Ipsum is simply dummy text

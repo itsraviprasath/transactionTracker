@@ -5,6 +5,7 @@ import { CgProfile } from "react-icons/cg";
 import { MdNotificationsNone } from "react-icons/md";
 import { HiMenu } from "react-icons/hi";
 import { IoMdLogOut } from "react-icons/io";
+import logo from "../assests/images/logo.png";
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -24,7 +25,7 @@ const Navbar = () => {
     <>
       <header>
         <Link className="logo" to="#">
-          <h1>TranX</h1>
+          <img src={logo} alt="logo" />
         </Link>
         <div className="menu-icon" onClick={handleShowNavbar}>
           <HiMenu />
