@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import LoanCard from "../components/LoanCard";
 import { Link } from "react-router-dom";
@@ -13,13 +13,24 @@ const AllLoans = () => {
   const [tenure, setTenure] = useState("");
   const [interestRete, setInterestRate] = useState("");
   const [emi, setEmi] = useState("");
+  var [alldata, setalldata] = useState([]);
 
   const LS = JSON.parse(localStorage.getItem("Data"));
   const id = LS._id;
-  // console.log(id)
+
+  const getdata = async () => {
+    axios
+      .get("http://localhost:2000/api/loans")
+      .then((res) => {
+        setalldata(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   const handleAddLoan = (e) => {
     console.log("Hello");
-    // e.preventDefault();
     axios
       .post(`http://localhost:2000/api/loans/${id}`, {
         amount: loanAmount,
@@ -38,6 +49,10 @@ const AllLoans = () => {
     setInterestRate("");
     setEmi("");
   };
+
+  useEffect(() => {
+    getdata();
+  }, []);
 
   return (
     <>
@@ -152,15 +167,14 @@ const AllLoans = () => {
           </Popup>
         </h2>
 
-        <LoanCard />
-        <LoanCard />
-        <LoanCard />
-        <LoanCard />
-        <LoanCard />
-        <LoanCard />
-        <LoanCard />
-        <LoanCard />
-        <LoanCard />
+        {alldata.map((item) => (
+          <LoanCard
+            amount={item.amount}
+            rateOfInterest={item.rateOfInterest}
+            tenure={item.tenure}
+            emi={item.emi}
+          />
+        ))}
       </main>
     </>
   );
